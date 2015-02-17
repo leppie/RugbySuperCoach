@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RugbySuperCoach" Class="RugbySuperCoachDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=RugbySuperCoach;Integrated Security=True" SettingsObjectName="RugbySuperCoachDB.Properties.Settings" SettingsPropertyName="RugbySuperCoachConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Country_Team" Member="Teams" ThisKey="Id" OtherKey="CountryId" Type="Team" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Game" Member="Games">
+    <Type Name="Game">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HomeTeamId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AwayTeamId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HomeScore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AwayScore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Game_PlayerStat" Member="PlayerStats" ThisKey="Id" OtherKey="GameId" Type="PlayerStat" />
+      <Association Name="Team_Game" Member="Team" ThisKey="HomeTeamId" OtherKey="Id" Type="Team" IsForeignKey="true" />
+      <Association Name="Team_Game1" Member="Team1" ThisKey="AwayTeamId" OtherKey="Id" Type="Team" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Player" Member="Players">
+    <Type Name="Player">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TeamId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="InitialValue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Player_PlayerStat" Member="PlayerStats" ThisKey="Id" OtherKey="PlayerId" Type="PlayerStat" />
+      <Association Name="Position_Player" Member="Position1" ThisKey="Position" OtherKey="ShortName" Type="Position" IsForeignKey="true" />
+      <Association Name="Team_Player" Member="Team" ThisKey="TeamId" OtherKey="Id" Type="Team" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlayerStat" Member="PlayerStats">
+    <Type Name="PlayerStat">
+      <Column Name="PlayerId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GameId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RU" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TW" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TF" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MinutesPlayed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Game_PlayerStat" Member="Game" ThisKey="GameId" OtherKey="Id" Type="Game" IsForeignKey="true" />
+      <Association Name="Player_PlayerStat" Member="Player" ThisKey="PlayerId" OtherKey="Id" Type="Player" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Position" Member="Positions">
+    <Type Name="Position">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Position_Player" Member="Players" ThisKey="ShortName" OtherKey="Position" Type="Player" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Team" Member="Teams">
+    <Type Name="Team">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Association Name="Team_Game" Member="Games" ThisKey="Id" OtherKey="HomeTeamId" Type="Game" />
+      <Association Name="Team_Game1" Member="Games1" ThisKey="Id" OtherKey="AwayTeamId" Type="Game" />
+      <Association Name="Team_Player" Member="Players" ThisKey="Id" OtherKey="TeamId" Type="Player" />
+      <Association Name="Country_Team" Member="Country" ThisKey="CountryId" OtherKey="Id" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AveragePlayerStats" Member="AveragePlayerStats">
+    <Type Name="AveragePlayerStats">
+      <Column Name="PlayerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoundsPlayed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Points" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DreamSquadOnPoints" Member="DreamSquadOnPoints">
+    <Type Name="DreamSquadOnPoints">
+      <Column Name="Team" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Average" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DreamSquadOnValueForMoney" Member="DreamSquadOnValueForMoneys">
+    <Type Name="DreamSquadOnValueForMoney">
+      <Column Name="Team" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Average" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DreamTeamOnPoints" Member="DreamTeamOnPoints">
+    <Type Name="DreamTeamOnPoints">
+      <Column Name="Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Against" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DreamTeamOnValueForMoney" Member="DreamTeamOnValueForMoneys">
+    <Type Name="DreamTeamOnValueForMoney">
+      <Column Name="Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Against" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlayerStats" Member="PlayerStats1">
+    <Type Name="PlayerStats">
+      <Column Name="GameId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PlayerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Against" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MinutesPlayed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.DreamTeamBasedOnPoints" Method="DreamTeamBasedOnPoints" IsComposable="true">
+    <Parameter Name="round" Type="System.Int32" DbType="Int" />
+    <ElementType Name="DreamTeamBasedOnPointsResult">
+      <Column Name="Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DreamTeamBasedOnValueForMoney" Method="DreamTeamBasedOnValueForMoney" IsComposable="true">
+    <Parameter Name="round" Type="System.Int32" DbType="Int" />
+    <ElementType Name="DreamTeamBasedOnValueForMoneyResult">
+      <Column Name="Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Against" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PositionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TopPlayerByPositionBasedOnPoints" Method="TopPlayerByPositionBasedOnPoints" IsComposable="true">
+    <Parameter Name="position" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="round" Type="System.Int32" DbType="Int" />
+    <ElementType Name="TopPlayerByPositionBasedOnPointsResult">
+      <Column Name="GameId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Against" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PositionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TopPlayerByPositionBasedOnValueForMoney" Method="TopPlayerByPositionBasedOnValueForMoney" IsComposable="true">
+    <Parameter Name="position" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="round" Type="System.Int32" DbType="Int" />
+    <ElementType Name="TopPlayerByPositionBasedOnValueForMoneyResult">
+      <Column Name="GameId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Round" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Team" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Against" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PositionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AverageTopPlayerByPositionBasedOnPoints" Method="AverageTopPlayerByPositionBasedOnPoints" IsComposable="true">
+    <Parameter Name="position" Type="System.String" DbType="NChar(10)" />
+    <ElementType Name="AverageTopPlayerByPositionBasedOnPointsResult">
+      <Column Name="Team" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Average" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PositionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AverageTopPlayerByPositionBasedOnValueForMoney" Method="AverageTopPlayerByPositionBasedOnValueForMoney" IsComposable="true">
+    <Parameter Name="position" Type="System.String" DbType="NChar(10)" />
+    <ElementType Name="AverageTopPlayerByPositionBasedOnValueForMoneyResult">
+      <Column Name="Team" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Player" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Average" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValueForMoney" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PositionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetOpposition" Method="GetOpposition" IsComposable="true">
+    <Parameter Name="player" Type="System.Int32" DbType="Int" />
+    <Parameter Name="game" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+</Database>

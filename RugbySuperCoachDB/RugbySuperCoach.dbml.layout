@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.375, 11.375" name="RugbySuperCoach">
+  <DataContextMoniker Name="/RugbySuperCoachDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d551c964-a833-4602-b519-a943f2519444" absoluteBounds="0.75, 5.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="157cca96-94a2-4ec8-8f45-64c4a434ab12" absoluteBounds="0.76500000059604645, 6.33500000089407, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a87a1837-b222-4816-8952-444170e53de2" absoluteBounds="6.25, 8, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/Game" />
+      <nestedChildShapes>
+        <elementListCompartment Id="538b4fb9-43be-4e58-8945-ca472e8f2c84" absoluteBounds="6.2650000005960464, 8.46000000089407, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ff54e7d-7780-4f6e-9a9c-de3ba876fe7e" absoluteBounds="6.25, 4.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/Player" />
+      <nestedChildShapes>
+        <elementListCompartment Id="875a860a-b357-4b1f-bb4f-dc92ed574bd2" absoluteBounds="6.2650000005960464, 5.08500000089407, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93133dce-359f-4d64-b9c9-0f9f9172efc8" absoluteBounds="9, 3.375, 2, 7.7322412109375">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/PlayerStat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3e7e974-887f-4a23-8c50-01263c94f6d6" absoluteBounds="9.0150000005960464, 3.8350000008940697, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d155a58-b3f7-475f-97c8-71d0760ae93d" absoluteBounds="3.5, 2.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/Position" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4bb88e9c-250d-47f8-bb9f-a747d0fc74d4" absoluteBounds="3.5150000005960464, 3.2100000008940697, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2be10bc-f552-41ca-bac9-9660d59cd542" absoluteBounds="3.5, 5.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/Team" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49ae2cc0-648f-40ed-924f-3d4150d888df" absoluteBounds="3.5150000005960464, 6.08500000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 8.98159912109375); (9 : 8.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RugbySuperCoachDataContext/Game/Game_PlayerStat" />
+      <nodes>
+        <classShapeMoniker Id="a87a1837-b222-4816-8952-444170e53de2" />
+        <classShapeMoniker Id="93133dce-359f-4d64-b9c9-0f9f9172efc8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 5.51044840494792); (9 : 5.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RugbySuperCoachDataContext/Player/Player_PlayerStat" />
+      <nodes>
+        <classShapeMoniker Id="7ff54e7d-7780-4f6e-9a9c-de3ba876fe7e" />
+        <classShapeMoniker Id="93133dce-359f-4d64-b9c9-0f9f9172efc8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.44314697265625); (7.25 : 3.44314697265625); (7.25 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RugbySuperCoachDataContext/Position/Position_Player" />
+      <nodes>
+        <classShapeMoniker Id="6d155a58-b3f7-475f-97c8-71d0760ae93d" />
+        <classShapeMoniker Id="7ff54e7d-7780-4f6e-9a9c-de3ba876fe7e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 7.20359537760417); (4.5 : 8.98159912109375); (6.25 : 8.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RugbySuperCoachDataContext/Team/Team_Game" />
+      <nodes>
+        <classShapeMoniker Id="c2be10bc-f552-41ca-bac9-9660d59cd542" />
+        <classShapeMoniker Id="a87a1837-b222-4816-8952-444170e53de2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 7.20359537760417); (5.0312525 : 8.45954706041649); (6.25 : 8.45954706041649)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RugbySuperCoachDataContext/Team/Team_Game1" />
+      <nodes>
+        <classShapeMoniker Id="c2be10bc-f552-41ca-bac9-9660d59cd542" />
+        <classShapeMoniker Id="a87a1837-b222-4816-8952-444170e53de2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.0104484047927); (6.25 : 6.0104484047927)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RugbySuperCoachDataContext/Team/Team_Player" />
+      <nodes>
+        <classShapeMoniker Id="c2be10bc-f552-41ca-bac9-9660d59cd542" />
+        <classShapeMoniker Id="7ff54e7d-7780-4f6e-9a9c-de3ba876fe7e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.47199625651042); (3.5 : 6.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RugbySuperCoachDataContext/Country/Country_Team" />
+      <nodes>
+        <classShapeMoniker Id="d551c964-a833-4602-b519-a943f2519444" />
+        <classShapeMoniker Id="c2be10bc-f552-41ca-bac9-9660d59cd542" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="593a4a1d-fbac-424d-93e7-019d00eccab2" absoluteBounds="14.125, 3.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/AveragePlayerStats" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a6e1a4f-ecae-4671-bea5-6f32c8e62fa4" absoluteBounds="14.14, 4.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b0229651-e512-402e-be6a-6b6f029d028a" absoluteBounds="14.125, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/DreamSquadOnPoints" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c396e589-09ff-468b-95ef-4790352e739b" absoluteBounds="14.14, 1.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39d0b384-01dc-46b2-876e-1924bdf37fe2" absoluteBounds="11.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/DreamSquadOnValueForMoney" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e8c92c1-585f-4841-81c5-881537377483" absoluteBounds="11.765, 1.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1177037-c69f-4b76-abd5-d327d80fdea9" absoluteBounds="11.75, 3.75, 2, 2.347801106770834">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/DreamTeamOnPoints" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d36e74f-8a3a-4516-b44e-266eeef3f2b9" absoluteBounds="11.765, 4.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03c94d2a-2f10-4f16-bee4-8b7619a27431" absoluteBounds="11.75, 7.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/DreamTeamOnValueForMoney" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9424490-f91e-4d1a-a236-92ed640c65e9" absoluteBounds="11.765, 8.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c442c2d6-4779-48b8-ae57-4cd0c525d579" absoluteBounds="14.125, 7.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/RugbySuperCoachDataContext/PlayerStats" />
+      <nestedChildShapes>
+        <elementListCompartment Id="957ceb49-4165-4bc7-bc2d-90766854a080" absoluteBounds="14.14, 8.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
